@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KraftPixel</title>
+    <link rel="stylesheet" href="Index.css" />
+  </head>
+
+  <body>
+    <div id="header"></div>
+    <div id="hero"></div>
+    <div id="features"></div>
+    <div id="footer"></div>
+
+    <script>
+      // Function to load HTML components dynamically
+      async function loadComponent(id, file) {
+        const response = await fetch(file);
+        const html = await response.text();
+        document.getElementById(id).innerHTML = html;
+      }
+
+      // Load all sections
+      loadComponent("header", "components/header.html");
+      loadComponent("hero", "components/hero.html");
+      loadComponent("features", "components/features.html");
+      loadComponent("footer", "components/footer.html");
+    </script>
+  </body>
+</html>
